@@ -47,6 +47,13 @@ class VideoGame extends Product{
   }
 }
 
+class criterias {
+  constructor(belowCost, belowDuration){
+    this.belowCost = belowCost;
+    this.belowDuration = belowDuration;
+  }
+}
+
 // function Product(name, price) {
 //   this.name = name;
 //   this.price = price;
@@ -85,5 +92,6 @@ class VideoGame extends Product{
 module.exports = {
   Book: Book,
   DVD: DVD,
-  VideoGame: VideoGame
+  VideoGame: VideoGame,
+  criterias: criterias
 };

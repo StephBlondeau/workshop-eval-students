@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 
 var store = require ('../src/store').store;
+var criteria = require ('../src/store').criteria;
 
 describe('Store', function() {
 
@@ -12,8 +13,8 @@ describe('Store', function() {
     expect(store.products).to.have.lengthOf(14);
   });
 
-  it('with belowCost criteria should return right products', function() {
-    expect(store.findProducts(20)).to.have.lengthOf(9);
+  it('with object criteria should return right products', function() {
+    expect(store.findProducts(criteria)).to.have.lengthOf(0);
   });
 
   it('with asket should return right price', function() {

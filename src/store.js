@@ -3,6 +3,7 @@ var chalk = require('chalk');
 var Book = require ('./product').Book;
 var DVD = require ('./product').DVD;
 var VideoGame = require ('./product').VideoGame;
+var criterias = require ('./product').criterias;
 var service = require ('./rateExchangeService').service;
 
 var products = [
@@ -25,12 +26,14 @@ var products = [
 	new VideoGame('Super Smash Bros Melee', 63.90, 'Game Cube', 300, 2400)
 ];
 
-function findProducts(belowCost) {
+var criteria = new criterias(20, 150);
+
+function findProducts(criteria) {
   var result = [];
-  if(belowCost) {
+  if(criteria) {
     for (var i = products.length - 1; i >= 0; i--) {
       var product = products[i];
-      if(product.price <= belowCost) {
+      if(product.price <= criteria.belowCost && product.getDuration() <= criteria.belowDuration) {
         result.push(product);
       }
     }
