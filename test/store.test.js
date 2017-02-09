@@ -24,4 +24,16 @@ describe('Store', function() {
       store.products[10]])).to.be.equal(99.22);
   });
 
+  it('Le premiere livre retourne une durée de 185 minutes ', function(){
+    expect(store.products[1].getDuration()).to.be.eql(185);
+  })
+
+  it('Le premiere dvd retourne une durée de 124 minutes', function(){
+    expect(store.products[5].getDuration()).to.be.eql(124);
+  })
+
+  it('Le premiere video game retourne une durée de 1050 minutes', function(){
+    expect(store.products[12].getDuration()).to.be.eql(1050);
+  })
+
 });
