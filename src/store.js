@@ -48,9 +48,9 @@ function calculateTotalprice(products) {
 }
 
 function toString(currency, rateCurrency) {
-  var result = chalk.green('The store is open, ' + products.length + ' articles are available :');
+  var result = chalk.green(`The store is open, ${products.length} articles are available :`);
   for (var i = products.length - 1; i >= 0; i--) {
-    result += '\n - ' + products[i].toString(currency, rateCurrency);
+    result += `\n - ${products[i].toString(currency, rateCurrency)}`;
   }
   return result;
 }
