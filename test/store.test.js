@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 
 var store = require ('../src/store').store;
 var criteria = require ('../src/store').criteria;
+var tabCriteria = require ('../src/store').tabCriteria;
 
 describe('Store', function() {
 
@@ -13,8 +14,8 @@ describe('Store', function() {
     expect(store.products).to.have.lengthOf(14);
   });
 
-  it('with object criteria should return right products', function() {
-    expect(store.findProducts(criteria)).to.have.lengthOf(0);
+  it('with tableau criteria should return right products', function() {
+    expect(store.findProducts(tabCriteria)).to.have.lengthOf(0);
   });
 
   it('with asket should return right price', function() {

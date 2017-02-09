@@ -27,13 +27,14 @@ var products = [
 ];
 
 var criteria = new criterias(20, 150);
+var tabCriteria = [20, 150];
 
-function findProducts(criteria) {
+function findProducts(tabCriteria) {
   var result = [];
-  if(criteria) {
+  if(tabCriteria.length > 0 ) {
     for (var i = products.length - 1; i >= 0; i--) {
       var product = products[i];
-      if(product.price <= criteria.belowCost && product.getDuration() <= criteria.belowDuration) {
+      if(product.price <= tabCriteria[0] && product.getDuration() <= tabCriteria[1]) {
         result.push(product);
       }
     }
